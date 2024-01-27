@@ -1,0 +1,43 @@
+Business rules help define the constraints, requirements, and logic governing the behaviour of your fleet management system. 
+
+1. Vehicle Creation:
+   - Rule: Every new vehicle must be associated with a branch, a fleet type, an ownership category, a project, a vehicle status, and a vehicle type.
+   - Reasoning: Ensures that each vehicle is properly categorized and affiliated with essential attributes.
+
+2. Driver Assignment:
+   - Rule: A driver can be assigned to only one vehicle at a time.
+   - Reasoning: Avoids situations where a driver is simultaneously assigned to multiple vehicles, ensuring clarity and accountability.
+
+3. Vehicle Status Update:
+   - Rule: Only authorized personnel can update the status of a vehicle.
+   - Reasoning: Ensures that status updates are performed by individuals with the necessary authority, maintaining data integrity.
+
+4. Vehicle Information Update:
+   - Rule: Changes to critical vehicle information (e.g., ownership category or vehicle type) must be logged and approved.
+   - Reasoning: Ensures that updates to essential vehicle details are tracked and subject to authorization, preventing unauthorized modifications.
+
+5. Project Association:
+   - Rule: A vehicle can be associated with multiple projects over time, but only one project at a time.
+   - Reasoning: Facilitates the tracking of a vehicle's involvement in different projects while avoiding simultaneous participation in multiple projects.
+
+6. View Vehicle Details:
+   - Rule: Users can view vehicle details based on their role and permissions.
+   - Reasoning: Ensures that sensitive information is accessible only to authorized personnel, preserving data security and privacy.
+
+7. Validation of Input:
+   - Rule: Input data (e.g., vehicle details, driver information) must be validated for accuracy and completeness.
+   - Reasoning: Prevents errors and inaccuracies in the system by ensuring that entered data meets specified criteria.
+
+8. Audit Trail for Updates:
+   - Rule: Maintain an audit trail for updates to vehicle-related information, including who made the update and when.
+   - Reasoning: Facilitates transparency and accountability, allowing for tracking changes made to critical data over time.
+
+9. Exception Handling:
+   - Rule: Implement error-handling mechanisms to manage unexpected scenarios, providing appropriate feedback to users.
+   - Reasoning: Ensures system robustness and user-friendliness by addressing unexpected situations gracefully.
+
+10. Authorization Levels:
+    - Rule: Different authorization levels exist for system users based on their roles (e.g., admin, manager, regular user).
+    - Reasoning: Enforces a hierarchy of access permissions, ensuring that users have appropriate access to system functionalities based on their roles.
+
+These business rules help maintain the integrity, security, and efficiency of the fleet management system, ensuring that it operates in accordance with specified requirements and user expectations.

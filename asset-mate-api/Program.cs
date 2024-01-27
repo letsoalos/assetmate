@@ -1,3 +1,4 @@
+using asset_mate_core.Interfaces;
 using asset_mate_infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ builder.Services.AddDbContext<DataContext>(opt =>
 {
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 
 var app = builder.Build();
 
@@ -28,5 +30,21 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+//Update database if we have pending migrations and/or create database if it does not exist.
+using var scope = app.Services.CreateScope();
+var services = scope.ServiceProvider;
+var context = services.GetRequiredService<DataContext>();
+var logger = services.GetRequiredService<ILogger<Program>>();
+try
+{
+    await context.Database.MigrateAsync();
+    await DataContextSeed.SeedAsync(context);
+}
+catch (Exception ex)
+{
+
+    logger.LogError(ex, "An error occured during migration");
+}
 
 app.Run();

@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "ProjectName": "Credidt Control",
+    "FirstName": "Jackie",
+    "LastName": "Chochi"
+  },
+  {
+    "Id": 2,
+    "ProjectName": "Indigent",
+    "FirstName": "Thabang",
+    "LastName": "thabang111"
+  },
+  {
+    "Id": 3,
+    "ProjectName": "Meter Reading",
+    "FirstName": "Ndivhuo",
+    "LastName": "Mudau"
+  },
+  {
+    "Id": 4,
+    "ProjectName": "Mantainance",
+    "FirstName": "Sello",
+    "LastName": "Letsoalo"
+  },
+  {
+    "Id": 5,
+    "ProjectName": "Smart Meter",
+    "FirstName": "Chula",
+    "LastName": "Ramonyai"
+  },
+  {
+    "Id": 6,
+    "ProjectName": "Boreholes",
+    "FirstName": "Clement",
+    "LastName": "Chauke"
+  }
+]

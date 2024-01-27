@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1,
+    "Name": "In Service",
+    "VehicleStatusCode": "IS"
+  },
+  {
+    "Id": 2,
+    "Name": "Out of Service",
+    "VehicleStatusCode": "OOS"
+  },
+  {
+    "Id": 3,
+    "Name": "Under Maintenance",
+    "VehicleStatusCode": "UM"
+  },
+  {
+    "Id": 4,
+    "Name": "In Repair",
+    "VehicleStatusCode": "IR"
+  },
+  {
+    "Id": 5,
+    "Name": "Inactive",
+    "VehicleStatusCode": "IA"
+  },
+  {
+    "Id": 6,
+    "Name": "Reserved",
+    "VehicleStatusCode": "RES"
+  },
+  {
+    "Id": 7,
+    "Name": "Active",
+    "VehicleStatusCode": "IA"
+  }
+]

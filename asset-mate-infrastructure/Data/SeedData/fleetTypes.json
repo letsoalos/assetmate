@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1,
+    "Name": "Economy Cars",
+    "FleetTypeCode": "ECO"
+  },
+  {
+    "Id": 2,
+    "Name": "Luxury Cars",
+    "FleetTypeCode": "LUX"
+  },
+  {
+    "Id": 3,
+    "Name": "Commercial Vans",
+    "FleetTypeCode": "CV"
+  },
+  {
+    "Id": 4,
+    "Name": "Delivery Trucks",
+    "FleetTypeCode": "DT"
+  },
+  {
+    "Id": 5,
+    "Name": "Motorcycles",
+    "FleetTypeCode": "MOT"
+  },
+  {
+    "Id": 6,
+    "Name": "Construction Vehicles",
+    "FleetTypeCode": "CVL"
+  },
+  {
+    "Id": 7,
+    "Name": "Utility Trailers",
+    "FleetTypeCode": "UTL"
+  }
+]

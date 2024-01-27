@@ -1,0 +1,14 @@
+[
+  {
+    "Id": 1,
+    "Name": "Lease"
+  },
+  {
+    "Id": 2,
+    "Name": "Installment Sale"
+  },
+  {
+    "Id": 3,
+    "Name": "Company Owned"
+  }
+]

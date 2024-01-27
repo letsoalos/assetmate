@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 1,
+    "Name": "Sedan"
+  },
+  {
+    "Id": 2,
+    "Name": "SUV"
+  },
+  {
+    "Id": 3,
+    "Name": "Truck"
+  },
+  {
+    "Id": 4,
+    "Name": "Motorcycle"
+  },
+  {
+    "Id": 5,
+    "Name": "Van"
+  },
+  {
+    "Id": 6,
+    "Name": "Electric"
+  },
+  {
+    "Id": 7,
+    "Name": "Hybrid"
+  }
+]

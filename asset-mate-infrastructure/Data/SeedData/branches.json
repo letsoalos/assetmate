@@ -1,0 +1,73 @@
+[
+  {
+    "Id": 1,
+    "Name": "MBH",
+    "StreetAddress": "52 Wierde Road",
+    "City": "Sandton",
+    "AddressCode": "2196",
+    "ContactNumber": "0115405369",
+    "FirstName": "Karabo",
+    "LastName": "Lekoadi"
+  },
+  {
+    "Id": 2,
+    "Name": "MSW",
+    "StreetAddress": "33 Riley Road, Woodmead",
+    "City": "Sandton",
+    "AddressCode": "2191",
+    "ContactNumber": "0118051683",
+    "FirstName": "Kono",
+    "LastName": "Mohale"
+  },
+  {
+    "Id": 3,
+    "Name": "Baatshuma Benoni",
+    "StreetAddress": "74 Jarrah Road",
+    "City": "Benoni",
+    "AddressCode": "1500",
+    "ContactNumber": "0119681111",
+    "FirstName": "Tshepo",
+    "LastName": "Mogashoa"
+  },
+  {
+    "Id": 4,
+    "Name": "Baatshuma Mogale City",
+    "StreetAddress": "52 Wierde Road",
+    "City": "Sandton",
+    "AddressCode": "2196",
+    "ContactNumber": "0115405369",
+    "FirstName": "Karabo",
+    "LastName": "Lekoadi"
+  },
+  {
+    "Id": 5,
+    "Name": "Baatshuma Rand West City",
+    "StreetAddress": "52 Wierde Road",
+    "City": "Sandton",
+    "AddressCode": "2196",
+    "ContactNumber": "0115405369",
+    "FirstName": "Karabo",
+    "LastName": "Lekoadi"
+  },
+
+  {
+    "Id": 6,
+    "Name": "Baatshuma Mbombela",
+    "StreetAddress": "52 Wierde Road",
+    "City": "Sandton",
+    "AddressCode": "2196",
+    "ContactNumber": "0115405369",
+    "FirstName": "Demo",
+    "LastName": "Lekoadi"
+  },
+  {
+    "Id": 7,
+    "Name": "Baatshuma Polokwane",
+    "StreetAddress": "52 Wierde Road",
+    "City": "Sandton",
+    "AddressCode": "2196",
+    "ContactNumber": "0115405369",
+    "FirstName": "Test",
+    "LastName": "Lekoadi"
+  }
+]
