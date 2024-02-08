@@ -23,5 +23,14 @@ namespace asset_mate_core.Entities
         public DateTime DateModified { get; set; }
         public int ModifiedByUserId { get; set; }
 
+
+        public virtual VehicleType VehicleType { get; set; }
+        public virtual FleetType FleetType { get; set; }
+        public virtual OwnershipCategory OwnershipCategory { get; set; }
+        public virtual VehicleStatus VehicleStatus { get; set; }
+        public virtual Branch Branch { get; set; }
+        public virtual AssignedDriver AssignedDriver { get; set; }
+        public virtual Project Project { get; set; }
+
     }
 }

@@ -1,14 +1,10 @@
-namespace asset_mate_core.Entities
+namespace asset_mate_api.Dtos
 {
-    public class AssignedDriver : BaseEntity
+    public class AssignedDriverToReturnDto
     {
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
-        public string DriversFullName
-        {
-            get { return $"{FirstName} {LastName}"; }
-        }
         public string LicenseNumber { get; set; }
         public DateTime LicenseExpiryDate { get; set; }
         public string ContactNumber { get; set; }
@@ -18,14 +14,10 @@ namespace asset_mate_core.Entities
         public string EmergencyContactNumber { get; set; }
         public string EmergencyContactName { get; set; }
         public string AdditionalNotes { get; set; }
-        public bool IsActive { get; set; } // Indicates if the driver is currently active
-        public int BranchId { get; set; }
-        public int ProjectId { get; set; }
-        public DateTime DateCreated { get; set; } = DateTime.Now;
+        public bool IsActive { get; set; }
+        public DateTime DateCreated { get; set; }
         public int CreatedByUserId { get; set; }
-
-
-        public virtual Branch Branch { get; set; }
-        public virtual Project Project { get; set; }
+        public string Branch { get; set; }
+        public string Project { get; set; }
     }
 }

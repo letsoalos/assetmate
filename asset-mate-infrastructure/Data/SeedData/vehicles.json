@@ -1,5 +1,6 @@
 [
   {
+    "Id": 1,
     "VIN": "VN0001",
     "EngineNumber": "ENG0258",
     "Make": "Toyota",
@@ -22,6 +23,7 @@
     "ModifiedByUserId": 1
   },
   {
+    "Id": 2,
     "VIN": "VN0002",
     "EngineNumber": "ENG0259",
     "Make": "BMW",
@@ -44,6 +46,7 @@
     "ModifiedByUserId": 1
   },
   {
+    "Id": 3,
     "VIN": "VN0003",
     "EngineNumber": "ENG0254",
     "Make": "Jeep",
@@ -66,6 +69,7 @@
     "ModifiedByUserId": 1
   },
   {
+    "Id": 4,
     "VIN": "VN00058",
     "EngineNumber": "ENG0268",
     "Make": "NISSAN",

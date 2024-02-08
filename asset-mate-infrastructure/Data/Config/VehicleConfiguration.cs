@@ -17,13 +17,13 @@ namespace asset_mate_infrastructure.Data.Config
             builder.Property(v => v.RegistrationNumber).IsRequired().HasMaxLength(20);
             builder.Property(v => v.CurrentOdometer).IsRequired();
             builder.Property(v => v.LicensDiskExpiryDate).IsRequired().HasMaxLength(20);
-            builder.HasOne<VehicleType>().WithMany().HasForeignKey(v => v.VehicleTypeId);
-            builder.HasOne<FleetType>().WithMany().HasForeignKey(v => v.FleetTypeId);
-            builder.HasOne<OwnershipCategory>().WithMany().HasForeignKey(v => v.OwnershipCategoryId);
-            builder.HasOne<VehicleStatus>().WithMany().HasForeignKey(v => v.VehicleStatusId);
-            builder.HasOne<Branch>().WithMany().HasForeignKey(v => v.BranchId);
-            builder.HasOne<Project>().WithMany().HasForeignKey(v => v.ProjectId);
-            builder.HasOne<AssignedDriver>().WithMany().HasForeignKey(v => v.AssignedDriverId);
+            builder.HasOne(v => v.VehicleType).WithMany().HasForeignKey(v => v.VehicleTypeId);
+            builder.HasOne(f => f.FleetType).WithMany().HasForeignKey(v => v.FleetTypeId);
+            builder.HasOne(o => o.OwnershipCategory).WithMany().HasForeignKey(v => v.OwnershipCategoryId);
+            builder.HasOne(v => v.VehicleStatus).WithMany().HasForeignKey(v => v.VehicleStatusId);
+            builder.HasOne(b => b.Branch).WithMany().HasForeignKey(v => v.BranchId);
+            builder.HasOne(p => p.Project).WithMany().HasForeignKey(v => v.ProjectId);
+            builder.HasOne(a => a.AssignedDriver).WithMany().HasForeignKey(v => v.AssignedDriverId);
         }
     }
 }

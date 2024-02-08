@@ -16,8 +16,8 @@ namespace asset_mate_infrastructure.Data.Config
             builder.Property(d => d.Address).IsRequired().HasMaxLength(100);
             builder.Property(d => d.EmergencyContactNumber).IsRequired().HasMaxLength(10);
             builder.Property(d => d.EmergencyContactName).IsRequired().HasMaxLength(50);
-            builder.HasOne<Branch>().WithMany().HasForeignKey(d => d.BranchId);             //Has one Branch with many drivers
-            builder.HasOne<Project>().WithMany().HasForeignKey(d => d.ProjectId);           //A Project can be associated with many drivers
+            builder.HasOne(b => b.Branch).WithMany().HasForeignKey(a => a.BranchId);             //Has one Branch with many drivers
+            builder.HasOne(p => p.Project).WithMany().HasForeignKey(a => a.ProjectId);           //A Project can be associated with many drivers
         }
     }
 }

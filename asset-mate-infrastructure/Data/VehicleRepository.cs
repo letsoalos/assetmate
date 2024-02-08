@@ -17,12 +17,28 @@ namespace asset_mate_infrastructure.Data
 
         public async Task<Vehicle> GetVehicleByIdAsync(int vehicleId)
         {
-            return await _context.Vehicles.FindAsync(vehicleId);
+            return await _context.Vehicles
+                .Include(v => v.VehicleType)                //using eager loading
+                .Include(v => v.FleetType)
+                .Include(v => v.OwnershipCategory)
+                .Include(v => v.VehicleStatus)
+                .Include(v => v.Branch)
+                .Include(v => v.AssignedDriver)
+                .Include(v => v.Project)
+                .FirstOrDefaultAsync(v => v.Id == vehicleId);
         }
 
         public async Task<IReadOnlyList<Vehicle>> GetVehiclesAsync()
         {
-            return await _context.Vehicles.ToListAsync();
+            return await _context.Vehicles
+                .Include(v => v.VehicleType)                //using eager loading
+                .Include(v => v.FleetType)
+                .Include(v => v.OwnershipCategory)
+                .Include(v => v.VehicleStatus)
+                .Include(v => v.Branch)
+                .Include(v => v.AssignedDriver)
+                .Include(v => v.Project)
+                .ToListAsync();
         }
 
         public Task<Vehicle> AddVehicleAsync(Vehicle vehicle)

@@ -11,7 +11,7 @@ using asset_mate_infrastructure.Data;
 namespace asset_mate_infrastructure.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240122221540_InitialCreate")]
+    [Migration("20240204185749_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -343,62 +343,80 @@ namespace asset_mate_infrastructure.Data.Migrations
 
             modelBuilder.Entity("asset_mate_core.Entities.AssignedDriver", b =>
                 {
-                    b.HasOne("asset_mate_core.Entities.Branch", null)
+                    b.HasOne("asset_mate_core.Entities.Branch", "Branch")
                         .WithMany()
                         .HasForeignKey("BranchId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("asset_mate_core.Entities.Project", null)
+                    b.HasOne("asset_mate_core.Entities.Project", "Project")
                         .WithMany()
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Branch");
+
+                    b.Navigation("Project");
                 });
 
             modelBuilder.Entity("asset_mate_core.Entities.Vehicle", b =>
                 {
-                    b.HasOne("asset_mate_core.Entities.AssignedDriver", null)
+                    b.HasOne("asset_mate_core.Entities.AssignedDriver", "AssignedDriver")
                         .WithMany()
                         .HasForeignKey("AssignedDriverId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("asset_mate_core.Entities.Branch", null)
+                    b.HasOne("asset_mate_core.Entities.Branch", "Branch")
                         .WithMany()
                         .HasForeignKey("BranchId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("asset_mate_core.Entities.FleetType", null)
+                    b.HasOne("asset_mate_core.Entities.FleetType", "FleetType")
                         .WithMany()
                         .HasForeignKey("FleetTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("asset_mate_core.Entities.OwnershipCategory", null)
+                    b.HasOne("asset_mate_core.Entities.OwnershipCategory", "OwnershipCategory")
                         .WithMany()
                         .HasForeignKey("OwnershipCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("asset_mate_core.Entities.Project", null)
+                    b.HasOne("asset_mate_core.Entities.Project", "Project")
                         .WithMany()
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("asset_mate_core.Entities.VehicleStatus", null)
+                    b.HasOne("asset_mate_core.Entities.VehicleStatus", "VehicleStatus")
                         .WithMany()
                         .HasForeignKey("VehicleStatusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("asset_mate_core.Entities.VehicleType", null)
+                    b.HasOne("asset_mate_core.Entities.VehicleType", "VehicleType")
                         .WithMany()
                         .HasForeignKey("VehicleTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("AssignedDriver");
+
+                    b.Navigation("Branch");
+
+                    b.Navigation("FleetType");
+
+                    b.Navigation("OwnershipCategory");
+
+                    b.Navigation("Project");
+
+                    b.Navigation("VehicleStatus");
+
+                    b.Navigation("VehicleType");
                 });
 #pragma warning restore 612, 618
         }
