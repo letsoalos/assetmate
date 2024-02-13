@@ -1,4 +1,5 @@
 using asset_mate_api.Dtos;
+using asset_mate_api.Errors;
 using asset_mate_core.Entities;
 using asset_mate_core.Interfaces;
 using asset_mate_core.Specifications;
@@ -7,9 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace asset_mate_api.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class FleetController : ControllerBase
+    public class FleetController : BaseApiController
     {
         private readonly IGenericRepository<Vehicle> _vehiclesRepo;
         private readonly IGenericRepository<VehicleType> _vehicleTypeRepo;
@@ -43,27 +42,27 @@ namespace asset_mate_api.Controllers
         public async Task<ActionResult<IReadOnlyList<VehicleToReturnDto>>> GetVehicles()
         {
             var spec = new VehicleWithLookUpsSepcification();
-
             var vehicles = await _vehiclesRepo.ListAsync(spec);
 
             return Ok(_mapper.Map<IReadOnlyList<Vehicle>, IReadOnlyList<VehicleToReturnDto>>(vehicles));
         }
 
         [HttpGet("get-vehicle/{VehicleId}")]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<VehicleToReturnDto>> GetVehicle(int VehicleId)
         {
             var spec = new VehicleWithLookUpsSepcification(VehicleId);
-
             var vehicle = await _vehiclesRepo.GetEntityWithSpec(spec);
 
-            return _mapper.Map<Vehicle, VehicleToReturnDto>(vehicle);
+            if (vehicle == null) return NotFound(new ApiResponse(404));
+
+            return Ok(_mapper.Map<Vehicle, VehicleToReturnDto>(vehicle));
         }
 
         [HttpGet("get-assigned-driver-by-vehicle/{AssignedDriverId}")]
         public async Task<ActionResult<AssignedDriverToReturnDto>> GetAssignedDriverByVehicle(int AssignedDriverId)
         {
             var spec = new AssignedDriverWithLookUpsSpecification(AssignedDriverId);
-
             var assignedDriver = await _assignedDriverRepo.GetEntityWithSpec(spec);
 
             return _mapper.Map<AssignedDriver, AssignedDriverToReturnDto>(assignedDriver);
