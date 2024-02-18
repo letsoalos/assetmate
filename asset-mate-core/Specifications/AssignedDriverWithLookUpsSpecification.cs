@@ -8,6 +8,7 @@ namespace asset_mate_core.Specifications
         {
             AddInclude(x => x.Branch);
             AddInclude(x => x.Project);
+            AddOrderBy(x => x.LastName);
         }
 
         public AssignedDriverWithLookUpsSpecification(int id)

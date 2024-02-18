@@ -1,4 +1,5 @@
 using asset_mate_api.Dtos;
+using asset_mate_api.Errors;
 using asset_mate_core.Entities;
 using asset_mate_core.Interfaces;
 using asset_mate_core.Specifications;
@@ -27,10 +28,14 @@ namespace asset_mate_api.Controllers
         }
 
         [HttpGet("get-driver/{driverId}")]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<AssignedDriverToReturnDto>> GetDriver(int driverId)
         {
             var spec = new AssignedDriverWithLookUpsSpecification(driverId);
             var driver = await _assignedDriverRepo.GetEntityWithSpec(spec);
+
+            if (driver == null) return NotFound(new ApiResponse(404));
+
 
             return Ok(_mapper.Map<AssignedDriver, AssignedDriverToReturnDto>(driver));
         }
